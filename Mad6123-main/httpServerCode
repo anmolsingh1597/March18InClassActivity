@@ -1,0 +1,13 @@
+const express = require('express')
+const app = express()
+ console.log(" you are running the server")
+app.get('/', function (req, res) {
+  res.send('Hello World   2')
+})
+
+app.get('/help', function (req, res) {
+    res.send('You have requested help')
+  })
+ 
+app.listen(3000)
+console.log(" you have terminated the server")

@@ -1,0 +1,21 @@
+insert into students ('studentid', 'studentname') values ('5', 'Steven');
+
+select * from enrollments;
+ 
+ insert into classes ('classid', 'classname') values ('Java101', 'Java 101')
+ 
+insert into classes ('classid', 'classname') values ('Math101	', 'Introduction to Business Math');
+insert into classes ('classid', 'classname') values ('EmergTech204', 'Emerging Technogies');
+insert into classes ('classid', 'classname') values ('Csharp104', 'C#');
+
+insert into enrollments ('enrollmentid', 'studentid', 'classid') values ('1', '1', 'Java101');
+
+insert into enrollments ('enrollmentid', 'studentid', 'classid') values ('2', '1', 'Math101');
+insert into enrollments ('enrollmentid', 'studentid', 'classid') values ('3', '3', 'EmergTech204');
+insert into enrollments ('enrollmentid', 'studentid', 'classid') values ('4', '4', 'Csharp104');
+insert into enrollments ('enrollmentid', 'studentid', 'classid') values ('5', '4', 'Java101');
+
+select c.classid, c.classname, s.studentid, s.studentname
+from students as s, enrollments as e, classes as c 
+where s.studentid = e.studentid and 
+e.classid = c.classid
